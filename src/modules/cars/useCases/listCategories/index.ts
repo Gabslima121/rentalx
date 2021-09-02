@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { CategoriesRepository } from '../../repositories/CategoriesRepository';
+import { CategoriesRepository } from '../../repositories/implementations/CategoriesRepository';
 import { ListCategoriesUseCase } from './ListCategoriesUseCase';
 import { ListCategoriesController } from './ListCategoriesController';
 

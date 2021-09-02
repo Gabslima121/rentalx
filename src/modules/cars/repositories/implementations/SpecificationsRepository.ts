@@ -2,11 +2,11 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable import/prefer-default-export */
 
-import { Specification } from '../model/Specification';
+import { Specification } from '../../model/Specification';
 import {
   ISpecificationsRepository,
   ICreateSpecificationsDTO,
-} from './ISpecificationsRepository';
+} from '../ISpecificationsRepository';
 
 class SpecificationsRepository implements ISpecificationsRepository {
   private specifications: Specification[];

@@ -1,11 +1,11 @@
 /* eslint-disable no-shadow */
 /* eslint-disable import/prefer-default-export */
 
-import { CategoryModel } from '../model/CategoryModel';
+import { CategoryModel } from '../../model/CategoryModel';
 import {
   ICreateCategoryDTO,
   ICategoriesRepository,
-} from './ICategoriesRepository';
+} from '../ICategoriesRepository';
 
 class CategoriesRepository implements ICategoriesRepository {
   private categories: CategoryModel[];
