@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { CategoryModel } from '../model/CategoryModel';
+import { CategoryModel } from '../entities/CategoryModel';
 
 interface ICreateCategoryDTO {
   name: string;
@@ -7,11 +7,11 @@ interface ICreateCategoryDTO {
 }
 
 interface ICategoriesRepository {
-  findByName(name: string): CategoryModel;
+  findByName(name: string): Promise<CategoryModel>;
 
-  list(): CategoryModel[];
+  list(): Promise<CategoryModel[]>;
 
-  create({ name, description }: ICreateCategoryDTO): void;
+  create({ name, description }: ICreateCategoryDTO): Promise<void>;
 }
 
 export { ICategoriesRepository, ICreateCategoryDTO };

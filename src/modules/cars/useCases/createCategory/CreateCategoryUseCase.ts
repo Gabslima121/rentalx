@@ -1,5 +1,4 @@
-/* eslint-disable no-useless-constructor */
-/* eslint-disable import/prefer-default-export */
+import { inject, injectable } from 'tsyringe';
 
 import { ICategoriesRepository } from '../../repositories/ICategoriesRepository';
 
@@ -8,11 +7,15 @@ interface IRequest {
   description: string;
 }
 
+@injectable()
 class CreateCategoryUseCase {
-  constructor(private categoriesRepository: ICategoriesRepository) {}
+  constructor(
+    @inject('CategoriesRepository')
+    private categoriesRepository: ICategoriesRepository
+  ) {}
 
-  execute({ name, description }: IRequest): void {
-    const categoryExists = this.categoriesRepository.findByName(name);
+  async execute({ description, name }: IRequest): Promise<void> {
+    const categoryExists = await this.categoriesRepository.findByName(name);
 
     if (categoryExists) {
       throw new Error('Category already exists!');

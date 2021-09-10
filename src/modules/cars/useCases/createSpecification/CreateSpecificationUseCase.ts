@@ -1,7 +1,4 @@
-/* eslint-disable no-useless-constructor */
-/* eslint-disable class-methods-use-this */
-/* eslint-disable import/prefer-default-export */
-
+import { inject, injectable } from 'tsyringe';
 import { ISpecificationsRepository } from '../../repositories/ISpecificationsRepository';
 
 interface IRequest {
@@ -9,8 +6,12 @@ interface IRequest {
   description: string;
 }
 
+@injectable()
 class CreateSpecificationUseCase {
-  constructor(private specificationsRepository: ISpecificationsRepository) {}
+  constructor(
+    @inject('SpecificationRepository')
+    private specificationsRepository: ISpecificationsRepository
+  ) {}
 
   execute({ description, name }: IRequest): void {
     const specificationExists = this.specificationsRepository.findByName(name);

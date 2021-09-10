@@ -2,7 +2,7 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable import/prefer-default-export */
 
-import { Specification } from '../../model/Specification';
+import { Specification } from '../../entities/Specification';
 import {
   ISpecificationsRepository,
   ICreateSpecificationsDTO,

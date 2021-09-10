@@ -1,14 +1,16 @@
-/* eslint-disable no-useless-constructor */
-/* eslint-disable import/prefer-default-export */
-
-import { CategoryModel } from '../../model/CategoryModel';
+import { inject, injectable } from 'tsyringe';
+import { CategoryModel } from '../../entities/CategoryModel';
 import { ICategoriesRepository } from '../../repositories/ICategoriesRepository';
 
+@injectable()
 class ListCategoriesUseCase {
-  constructor(private categoriesRepository: ICategoriesRepository) {}
+  constructor(
+    @inject('CategoriesRepository')
+    private categoriesRepository: ICategoriesRepository
+  ) {}
 
-  execute(): CategoryModel[] {
-    const categories = this.categoriesRepository.list();
+  async execute(): Promise<CategoryModel[]> {
+    const categories = await this.categoriesRepository.list();
 
     return categories;
   }
