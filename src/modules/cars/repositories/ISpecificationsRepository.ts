@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 
-import { Specification } from '../entities/Specification';
+import { Specification } from '../infra/typeorm/entities/Specification';
 
 interface ICreateSpecificationsDTO {
   name: string;

@@ -1,4 +1,4 @@
-import { CategoryModel } from '../../entities/CategoryModel';
+import { CategoryModel } from '../../infra/typeorm/entities/CategoryModel';
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
