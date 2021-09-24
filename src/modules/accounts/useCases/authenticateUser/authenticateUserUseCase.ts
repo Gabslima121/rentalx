@@ -1,9 +1,10 @@
+import 'reflect-metadata';
 import { inject, injectable } from 'tsyringe';
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 
-import { UsersRepository } from '../../repositories/implementations/UsersRepository';
-import { AppError } from '../../../../errors/AppError';
+import { AppError } from '@errors/AppError';
+import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
 
 interface IRequest {
   email: string;
@@ -22,7 +23,7 @@ interface IResponse {
 class AuthenticatUserUseCase {
   constructor(
     @inject('UsersRepository')
-    private usersRepository: UsersRepository
+    private usersRepository: IUsersRepository
   ) {}
 
   async execute({ email, password }: IRequest): Promise<IResponse> {
