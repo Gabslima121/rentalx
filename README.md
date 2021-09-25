@@ -9,9 +9,8 @@ Deve ser possivel cadastrar um novo carro;
 
 **RN**
 Não deve ser possivel cadastrar um carro com uma placa ja existente;
-Não deve ser possivel alterar a placa de um carro ja cadastrado;
 Novos carros devem ser cadastrados como disponiveis para aluguel;
-Apenas um usuário administrador deve ser capaz de cadastrar um novo carro;
+*Apenas um usuário administrador deve ser capaz de cadastrar um novo carro;
 
 ---
 
