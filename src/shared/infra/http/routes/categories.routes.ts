@@ -2,9 +2,9 @@ import 'reflect-metadata';
 import { Router } from 'express';
 import multer from 'multer';
 
-import { CreateCategoryController } from '../modules/cars/useCases/createCategory/CreateCategoryContoller';
-import { ListCategoriesController } from '../modules/cars/useCases/listCategories/ListCategoriesController';
-import { ImportCategoryController } from '../modules/cars/useCases/importCategory/ImportCategoryController';
+import { CreateCategoryController } from '@modules/cars/useCases/createCategory/CreateCategoryContoller';
+import { ImportCategoryController } from '@modules/cars/useCases/importCategory/ImportCategoryController';
+import { ListCategoriesController } from '@modules/cars/useCases/listCategories/ListCategoriesController';
 
 const categoriesRoutes = Router();
 
